@@ -1,0 +1,73 @@
+/* ============================ PENYESUAIAN BAGIAN LAIN ============================
+   Bagian yang sudah memakai token otomatis ikut tema. Di sini hanya yang perlu
+   disentuh: huruf kapital semua dihapus, permukaan jadi kaca, warna kategori. */
+.sublab,.fld>label,.addrow>label,.newcat>label,.clshd .nm,.stats .l,.sbadge,.simbadge,
+.hero .pair .k,.hero .biglab,.donut .mid .l{text-transform:none;letter-spacing:0}
+.clshd .nm{font-size:13.5px;font-weight:700;color:var(--txt)}
+.stats .l,.donut .mid .l{font-size:11px}
+.addrow>label,.newcat>label{font-size:12.5px;color:var(--mut);font-weight:700}
+
+/* cari & filter */
+#tx-q{background:rgba(255,255,255,.06);border:1px solid var(--line2);border-radius:99px;padding:13px 44px;
+  backdrop-filter:blur(14px);transition:border-color .2s,box-shadow .25s,background .2s}
+#tx-q::placeholder{color:var(--mut2)}
+#tx-q:focus{border-color:rgba(160,140,255,.75);box-shadow:0 0 0 4px rgba(160,140,255,.2);background:rgba(255,255,255,.09)}
+.fchip{background:rgba(255,255,255,.06);border-color:var(--line);font-weight:700}
+.fchip .ic{color:hsl(var(--ch,250) 92% 78%)}
+.fchip[aria-pressed="true"]{background:hsl(var(--ch,255) 90% 64%/.24);border-color:hsl(var(--ch,255) 90% 74%/.7);color:#fff}
+.fchip[data-cat=""][aria-pressed="true"]{background:var(--grad);border-color:transparent;color:#0a0919}
+.hint{background:rgba(255,255,255,.045);border-color:var(--line2);border-radius:var(--r2)}
+
+/* impor & tinjau */
+.iopt{padding:15px 16px;margin-bottom:12px}
+.iopt:active{background:var(--card2)}
+.stats>div{border-radius:var(--r2);box-shadow:none}
+.stats .n{font-family:var(--fd);font-size:20px;font-weight:800}
+.srow .t1{font-weight:700}
+.cbx{border-color:var(--line2);background:rgba(255,255,255,.05)}
+.cbx[aria-checked="true"]{background:var(--grad);border-color:transparent;color:#0a0919}
+.simbadge{background:rgba(76,201,255,.14)}
+.commitbar{bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 4px)}
+.ta{background:rgba(255,255,255,.06);border-radius:var(--r2)}
+.backbar h2{font-family:var(--fd);font-size:19px;letter-spacing:-.02em}
+
+/* mode atur, kategori, tombol kecil */
+.btn-sm{border-radius:99px;border-color:transparent;background:var(--acc-s);padding:7px 13px}
+.btn-sm.plain{background:rgba(255,255,255,.06);border-color:var(--line2)}
+.iconbtn{border-radius:50%;background:rgba(255,255,255,.05)}
+.ipick button,.newcat{background:rgba(255,255,255,.05)}
+.ipick button[aria-pressed="true"]{background:var(--acc-s);border-color:rgba(160,140,255,.65);color:#fff}
+.pilltog[aria-pressed="true"]{background:var(--acc-s)}
+
+/* kekayaan */
+.donut .mid .v{font-family:var(--fd);font-size:17px;font-weight:800;letter-spacing:-.03em}
+.arow .v,.clshd .tt{font-family:var(--fd);font-weight:700}
+.spark .ln{stroke:var(--acc2);stroke-width:2.4}
+.spark .ar{fill:rgba(76,201,255,.14)}
+.spark .dt{fill:var(--acc2)}
+.tsum b,.step .v{color:var(--acc2)}
+
+/* kunci PIN & onboarding: kabut warna tetap terlihat di baliknya */
+#lockscreen,#onboarding{background:rgba(10,9,25,.58);backdrop-filter:blur(30px) saturate(1.5);
+  -webkit-backdrop-filter:blur(30px) saturate(1.5)}
+#onboarding h1,#lockscreen h1{font-family:var(--fd);font-size:26px;font-weight:800;letter-spacing:-.03em}
+#onboarding .mark,#lockscreen .mark{background:var(--grad);border:0;color:#0a0919;
+  box-shadow:0 10px 32px rgba(106,167,255,.45),inset 0 1px 0 rgba(255,255,255,.5)}
+.keypad button{background:rgba(255,255,255,.07);border-radius:50%;width:76px;height:76px;
+  font-family:var(--fd);font-weight:700;backdrop-filter:blur(14px)}
+.keypad button:active{background:rgba(255,255,255,.18)}
+.keypad button.act{background:none;border-color:transparent}
+.keypad{grid-template-columns:repeat(3,76px)}
+.dots span.on{background:var(--grad);border-color:transparent}
+.soon{background:rgba(255,255,255,.04);border-radius:var(--r)}
+@media (prefers-reduced-motion:reduce){
+  body::before{animation:none}
+  .ribbon i,.fill,#main.enter,.stg,.toast{animation:none}
+  #sheet,#scrim{transition-duration:.01ms}
+}
+
+/* catatan kecil di baris Tinjau: teks biasa, bukan kotak putus-putus seperti hint kosong */
+.srow .hint{background:none;border:0;padding:0;border-radius:0;text-align:left}
+.srow .hint.ai{color:var(--acc2);font-weight:700}
+.srow .hint.ai::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--acc2);margin-right:6px;vertical-align:1px}

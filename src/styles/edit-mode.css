@@ -1,0 +1,26 @@
+/* ============================ MODE ATUR ============================ */
+.btn-sm{font-size:12px;font-weight:700;color:var(--acc);padding:6px 11px;border-radius:9px;
+  border:1px solid var(--acc-d);background:var(--acc-s);white-space:nowrap}
+.btn-sm.plain{color:var(--mut);border-color:var(--line2);background:none}
+.btn-sm .ic{width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:4px}
+.ebar{display:flex;align-items:center;gap:9px;padding:11px 0;border-bottom:1px solid var(--line)}
+.ebar:last-child{border-bottom:0}
+.ebar .body{flex:1;min-width:0}
+.ebar .nm{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ebar .inp{padding:8px 10px;font-size:13.5px;text-align:right;font-variant-numeric:tabular-nums;
+  border-radius:var(--r3)}
+.ebar .w-money{flex:0 0 118px}
+.iconbtn{width:32px;height:32px;flex:0 0 32px;border-radius:10px;border:1px solid var(--line2);
+  color:var(--mut2);display:grid;place-items:center}
+.iconbtn:active{color:var(--txt)}
+.iconbtn.danger{color:var(--down);border-color:rgba(255,123,143,.35)}
+.iconbtn.danger.armed{width:auto;flex:0 0 auto;padding:0 11px;font-size:11.5px;font-weight:700;
+  background:rgba(255,123,143,.12)}
+.pilltog{font-size:10px;padding:2px 7px;border-radius:7px;border:1px solid var(--line2);
+  color:var(--mut2);font-weight:600;margin-left:6px;white-space:nowrap}
+.pilltog[aria-pressed="true"]{background:var(--acc-s);border-color:var(--acc-d);color:var(--acc)}
+.addrow{padding:13px 0 2px}
+.addrow>label{display:block;font-size:11px;color:var(--mut2);letter-spacing:.5px;
+  text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.goal .ginp{display:flex;gap:8px;margin-top:9px}
+.goal .ginp .inp{padding:8px 10px;font-size:13px}

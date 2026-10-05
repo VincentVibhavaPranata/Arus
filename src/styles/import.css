@@ -1,0 +1,48 @@
+/* ============================ IMPOR / TINJAU ============================ */
+.backbar{display:flex;align-items:center;gap:10px;padding:4px 0 10px}
+.backbar h2{margin:0;font-size:15px;font-weight:700;flex:1}
+.iopt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:14px;margin-bottom:10px}
+.iopt:active{background:var(--card2)}
+.iopt .body{flex:1;min-width:0}
+.iopt .t1{font-size:14px;font-weight:600}
+.iopt .t2{font-size:11.5px;color:var(--mut2);margin-top:2px}
+.simbadge{font-size:9.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+  padding:2px 7px;border-radius:6px;border:1px solid var(--info);color:var(--info);
+  background:rgba(90,162,255,.1);flex:0 0 auto}
+.stats{display:flex;gap:8px;margin-bottom:12px}
+.stats>div{flex:1;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r2);padding:9px 10px;text-align:center}
+.stats .n{font-size:17px;font-weight:750;font-variant-numeric:tabular-nums}
+.stats .l{font-size:9.5px;color:var(--mut2);letter-spacing:.4px;text-transform:uppercase;margin-top:1px}
+.stats .auto .n{color:var(--up)}
+.stats .check .n{color:var(--acc)}
+.stats .dup .n{color:var(--mut2)}
+.srow{display:flex;align-items:flex-start;gap:11px;padding:11px 13px;
+  border-bottom:1px solid var(--line);width:100%;text-align:left}
+.srow:last-child{border-bottom:0}
+.srow.dup{opacity:.5}
+.cbx{width:22px;height:22px;flex:0 0 22px;border-radius:7px;border:1.5px solid var(--line2);
+  display:grid;place-items:center;margin-top:1px;color:transparent}
+.cbx .ic{width:13px;height:13px}
+.cbx[aria-checked="true"]{background:var(--acc);border-color:var(--acc);color:#17130a}
+.srow .body{flex:1;min-width:0}
+.srow .t1{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srow .t2{font-size:11px;color:var(--mut2);margin-top:2px;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+.srow .hint{font-size:10.5px;margin-top:4px;color:var(--acc)}
+.srow.dup .hint{color:var(--mut2)}
+.srow .right{flex:0 0 auto;text-align:right}
+.srow .amt{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}
+.sbadge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.4px;
+  text-transform:uppercase;padding:1px 6px;border-radius:5px;margin-top:5px;
+  border:1px solid var(--line2);color:var(--mut2)}
+.sbadge.auto{border-color:rgba(111,242,176,.4);color:var(--up)}
+.sbadge.check{border-color:var(--acc-d);color:var(--acc)}
+.commitbar{position:sticky;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 8px);
+  z-index:20;margin-top:14px}
+.ta{width:100%;min-height:130px;background:var(--card);border:1px solid var(--line2);
+  border-radius:var(--r2);padding:12px;font-family:var(--ff);font-size:12.5px;
+  outline:none;resize:vertical;line-height:1.5}
+.ta:focus{border-color:var(--acc-d);box-shadow:0 0 0 3px var(--acc-s)}

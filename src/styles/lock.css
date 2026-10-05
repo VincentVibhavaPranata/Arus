@@ -1,0 +1,40 @@
+/* ============================ KUNCI PIN ============================ */
+#lockscreen,#onboarding{position:fixed;inset:0;z-index:200;background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px 20px calc(env(safe-area-inset-bottom,0px) + 24px);overflow-y:auto}
+#onboarding{z-index:190}
+#onboarding h1{margin:0 0 6px;font-size:19px;font-weight:750;letter-spacing:-.2px}
+#onboarding .sub{font-size:12.5px;color:var(--mut);margin-bottom:26px;text-align:center;
+  max-width:300px;line-height:1.55}
+#onboarding .mark{width:46px;height:46px;border-radius:15px;
+  background:radial-gradient(120% 120% at 20% 15%,#1b2027,#0e1116);
+  border:1px solid var(--line2);display:grid;place-items:center;color:var(--acc);
+  margin-bottom:16px}
+#onboarding .mark .ic{width:26px;height:26px}
+#lockscreen .mark{width:44px;height:44px;border-radius:14px;
+  background:radial-gradient(120% 120% at 20% 15%,#1b2027,#0e1116);
+  border:1px solid var(--line2);display:grid;place-items:center;color:var(--acc);
+  margin-bottom:14px}
+#lockscreen .mark .ic{width:24px;height:24px}
+#lockscreen h1{margin:0 0 4px;font-size:17px;font-weight:700;letter-spacing:.2px}
+#lockscreen .sub{font-size:12px;color:var(--mut2);margin-bottom:26px;text-align:center;
+  max-width:290px;line-height:1.5}
+.dots{display:flex;gap:12px;margin-bottom:14px;min-height:14px}
+.dots span{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--line2);
+  transition:background .12s,border-color .12s}
+.dots span.on{background:var(--acc);border-color:var(--acc)}
+#lock-msg{font-size:12.5px;min-height:34px;text-align:center;color:var(--down);
+  max-width:300px;line-height:1.4}
+#lock-msg.info{color:var(--mut)}
+.keypad{display:grid;grid-template-columns:repeat(3,76px);gap:14px;margin-top:6px}
+.keypad button{height:64px;border-radius:20px;border:1px solid var(--line2);
+  background:var(--card);font-size:23px;font-weight:600;color:var(--txt);
+  font-variant-numeric:tabular-nums}
+.keypad button:active{background:var(--card2)}
+.keypad button:disabled{opacity:.3}
+.keypad button.act{background:none;border-color:transparent;font-size:14px;
+  font-weight:600;color:var(--mut)}
+.keypad button.act .ic{width:20px;height:20px}
+#lock-forgot{margin-top:22px;font-size:12.5px;color:var(--mut2);
+  border:1px solid transparent;padding:8px 12px;border-radius:9px}
+#lock-forgot:active{color:var(--acc)}

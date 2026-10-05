@@ -1,0 +1,74 @@
+/* ============================ SHEET: KACA GELAP ============================ */
+#scrim{position:fixed;inset:0;z-index:50;background:rgba(5,3,20,.6);opacity:0;transition:opacity .3s;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#scrim.on{opacity:1}
+#sheet{position:fixed;left:0;right:0;bottom:0;z-index:51;max-width:480px;margin:0 auto;
+  background:linear-gradient(170deg,rgba(44,37,92,.84),rgba(20,17,46,.92));
+  backdrop-filter:blur(34px) saturate(1.6);-webkit-backdrop-filter:blur(34px) saturate(1.6);
+  border:1px solid rgba(255,255,255,.17);border-bottom:0;border-radius:32px 32px 0 0;
+  box-shadow:0 -24px 70px rgba(2,0,16,.65),inset 0 1px 0 rgba(255,255,255,.18);
+  transform:translateY(104%);transition:transform .5s var(--spring);
+  max-height:92vh;overflow-y:auto;padding-bottom:env(safe-area-inset-bottom,0px)}
+#sheet.on{transform:none}
+/* header dialog menempel di atas: beri ruang supaya elemen yang difokus/di-scroll-ke
+   (Tab, scrollIntoView) tidak berhenti TERTUTUP di bawahnya */
+#sheet{scroll-padding-top:84px;scroll-padding-bottom:20px}
+.sh-hd{position:sticky;top:0;background:rgba(30,25,66,.7);backdrop-filter:blur(14px);padding:16px 20px 12px;
+  display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);z-index:2}
+.sh-hd h3{margin:0;font-family:var(--fd);font-size:19px;font-weight:700;letter-spacing:-.02em;flex:1}
+.sh-x{width:34px;height:34px;border-radius:50%;border:1px solid var(--line2);color:var(--mut);
+  background:rgba(255,255,255,.06);display:grid;place-items:center;font-size:15px}
+.sh-x:hover{background:rgba(255,255,255,.14);color:var(--txt)}
+.sh-bd{padding:18px 20px 22px}
+.grip{width:40px;height:4px;border-radius:99px;background:rgba(255,255,255,.22);margin:9px auto 0}
+
+/* --- form --- */
+.fld{margin-bottom:16px}
+.fld>label{display:block;font-size:12.5px;color:var(--mut);margin-bottom:7px;font-weight:700}
+.inp{width:100%;background:rgba(255,255,255,.06);border:1px solid var(--line2);border-radius:var(--r2);
+  padding:13px 14px;font-size:15px;outline:none;appearance:none;
+  transition:border-color .2s,box-shadow .25s,background .2s}
+.inp::placeholder{color:var(--mut2)}
+.inp:focus{border-color:rgba(160,140,255,.75);box-shadow:0 0 0 4px rgba(160,140,255,.2);background:rgba(255,255,255,.09)}
+.inp.money{font-family:var(--fd);font-size:34px;font-weight:800;letter-spacing:-.04em;text-align:right;
+  font-variant-numeric:tabular-nums;padding:16px 16px}
+.seg{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:99px;padding:4px}
+.seg button{flex:1;padding:10px 4px;border-radius:99px;font-size:13px;font-weight:700;color:var(--mut)}
+.seg button[aria-pressed="true"]{background:var(--grad);color:#0a0919;box-shadow:0 4px 16px rgba(106,167,255,.38)}
+
+/* --- pemilih kategori: semua tampil sekaligus, warna per kategori --- */
+.catgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.catchip{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px 11px;
+  border-radius:19px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--mut);
+  font-size:11.5px;font-weight:700;line-height:1.25;text-align:center;min-height:82px;justify-content:center}
+.catchip .ic{width:24px;height:24px;color:hsl(var(--ch,250) 92% 78%)}
+.catchip:hover{background:rgba(255,255,255,.09)}
+.catchip[aria-pressed="true"]{background:hsl(var(--ch,250) 90% 64%/.22);border-color:hsl(var(--ch,250) 90% 74%/.7);
+  color:#fff;box-shadow:0 0 0 3px hsl(var(--ch,250) 90% 64%/.15)}
+
+/* --- pemilih akun --- */
+.acctgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:8px}
+.acctchip{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 4px 10px;
+  border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--mut);
+  font-size:11px;font-weight:700}
+.acctchip .mono{width:30px;height:30px;border-radius:11px;display:grid;place-items:center;
+  font-size:11px;font-weight:800;letter-spacing:-.02em;
+  background:rgba(255,255,255,.08);border:1px solid var(--line2);color:var(--mut)}
+.acctchip:hover{background:rgba(255,255,255,.09)}
+.acctchip[aria-pressed="true"]{background:var(--acc-s);border-color:rgba(160,140,255,.65);color:#fff}
+.acctchip[aria-pressed="true"] .mono{background:var(--grad);border-color:transparent;color:#0a0919}
+.tfsep{display:flex;align-items:center;gap:10px;margin:14px 0 12px;color:var(--acc)}
+.tfsep .ln{flex:1;height:1px;background:var(--line)}
+.tfsep .ic{width:17px;height:17px}
+.sublab{display:block;font-size:12.5px;color:var(--mut);margin-bottom:8px;font-weight:700}
+.row2{display:flex;gap:10px}
+.row2>*{flex:1;min-width:0}
+.arrowmid{flex:0 0 auto;align-self:flex-end;padding:0 0 14px;color:var(--acc);font-size:16px}
+.btn{width:100%;padding:15px;border-radius:var(--r2);font-size:15px;font-weight:800;letter-spacing:.005em;
+  background:var(--grad);color:#0a0919;box-shadow:0 8px 26px rgba(106,167,255,.35),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:rgba(255,255,255,.06);border:1px solid var(--line2);color:var(--txt);box-shadow:none}
+.btn.ghost:hover{background:rgba(255,255,255,.12);filter:none}
+.err{background:rgba(255,123,143,.12);border:1px solid rgba(255,123,143,.38);color:#ffc2cb;
+  border-radius:var(--r3);padding:10px 12px;font-size:13px;margin-bottom:12px}

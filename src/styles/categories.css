@@ -1,0 +1,15 @@
+/* ============================ KELOLA KATEGORI ============================ */
+.crow{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:0}
+.crow .body{flex:1;min-width:0}
+.crow .inp{padding:8px 10px;font-size:13.5px}
+.crow .cnt{font-size:11px;color:var(--mut2);margin-top:3px}
+.ipick{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:8px}
+.ipick button{padding:10px 0;border-radius:12px;border:1px solid var(--line);
+  background:var(--card);color:var(--mut);display:grid;place-items:center}
+.ipick button[aria-pressed="true"]{background:var(--acc-s);border-color:var(--acc-d);color:var(--acc)}
+.newcat{background:var(--card);border:1px solid var(--line2);border-radius:var(--r2);
+  padding:13px;margin-top:9px}
+.newcat>label{display:block;font-size:11px;color:var(--mut2);letter-spacing:.5px;
+  text-transform:uppercase;margin-bottom:7px;font-weight:600}
+.catchip.addchip{border-style:dashed;color:var(--mut2)}

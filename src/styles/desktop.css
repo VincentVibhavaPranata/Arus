@@ -1,0 +1,80 @@
+/* ============================ DESKTOP ============================
+   < 1024px: tampilan HP apa adanya (tablet cuma lebih lega).
+   >= 1024px: sidebar kaca di kiri, konten lebar dua kolom, form jadi dialog. */
+.pane{display:contents}
+
+@media (min-width:600px) and (max-width:1023px){
+  #app{max-width:560px}
+  #nav{max-width:520px}
+  #sheet,#toasts{max-width:560px}
+}
+
+@media (min-width:1024px){
+  :root{--side-w:268px;--nav-h:0px}
+
+  #app{max-width:none;margin:0;padding:0 0 0 var(--side-w)}
+  #hdr{position:fixed;top:0;left:0;width:var(--side-w);z-index:41;padding:28px 26px 0}
+  #hdr::before{display:none}
+  #main{max-width:1200px;margin:0 auto;padding:38px 48px 72px}
+
+  /* --- sidebar kaca --- */
+  #nav{top:0;bottom:0;left:0;right:auto;width:var(--side-w);max-width:none;height:auto;margin:0;
+    padding:96px 16px 22px;flex-direction:column;align-items:stretch;gap:6px;border-radius:0;
+    border-width:0 1px 0 0;background:rgba(16,13,40,.5);box-shadow:none}
+  #nav button{flex:none;height:auto;flex-direction:row;justify-content:flex-start;gap:13px;
+    padding:13px 16px;border-radius:16px;font-size:14.5px;letter-spacing:0}
+  #nav button:hover:not([aria-current="page"]){background:rgba(255,255,255,.07);color:var(--txt)}
+  #nav button .ic{width:20px;height:20px}
+  #nav button#nav-trading{display:flex}
+  #nav-add{order:-1;flex:none!important;width:auto;height:auto!important;margin:0 0 16px;
+    justify-content:center!important;border-radius:18px!important;padding:14px 16px!important}
+  #nav-add{display:flex;align-items:center;gap:8px}
+  #nav-add .fab{display:grid;place-items:center;height:24px;font-size:24px;line-height:1;margin:0}
+  #nav-add span:last-child{display:inline;font-weight:800;font-size:14.5px}
+  #nav .keys{display:flex;flex-direction:column;gap:10px;margin-top:auto;padding:16px 8px 0;
+    font-size:12px;color:var(--mut2)}
+  #nav .keys kbd{font-family:var(--ff);font-weight:800;font-size:11px;padding:3px 8px;border-radius:8px;
+    background:rgba(255,255,255,.08);border:1px solid var(--line2);color:var(--txt);margin-right:6px}
+
+  /* --- halaman dua kolom --- */
+  body[data-tab="dasbor"] #main,
+  body[data-tab="akun"] #main,
+  body[data-tab="trading"] #main{column-count:2;column-gap:30px}
+  #main>.hero,#main>.backbar,#main>.stats{column-span:all}
+  .pane{display:block;break-inside:avoid;margin-bottom:6px}
+  .pane>.sec{margin-top:0}
+  .hero{padding:28px 30px 30px;border-radius:34px}
+  .hero .big{font-size:60px}
+  .hero .pair{max-width:560px}
+  .ribbon{height:14px}
+
+  body[data-tab="lainnya"] #main,
+  body[data-tab="impor"] #main{max-width:1000px}
+  body[data-tab="lainnya"] .pane,
+  body[data-tab="impor"] .pane{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start;margin-bottom:10px}
+  .pane>.sec,.pane>.hint{grid-column:1/-1}
+  body[data-tab="lainnya"] .pane>.card,
+  body[data-tab="impor"] .pane>.iopt{margin-bottom:0}
+  body[data-tab="transaksi"] #main{max-width:900px}
+  #trd-back{display:none}
+
+  /* --- form & dialog jadi modal di tengah layar --- */
+  #sheet{left:50%;right:auto;top:50%;bottom:auto;width:min(600px,calc(100vw - 48px));max-width:none;
+    margin:0;max-height:88vh;border:1px solid rgba(255,255,255,.18);border-radius:30px;padding-bottom:0;
+    opacity:0;transform:translate(-50%,-44%) scale(.94);
+    transition:transform .5s var(--spring),opacity .22s}
+  #sheet.on{transform:translate(-50%,-50%);opacity:1}
+  .grip{display:none}
+  .sh-hd{border-radius:30px 30px 0 0}
+
+  #toasts{left:var(--side-w);max-width:540px;bottom:26px}
+  .commitbar{bottom:18px}
+}
+
+@media (hover:hover) and (min-width:1024px){
+  .tx:hover,.bud:hover,.goal:hover{background:rgba(255,255,255,.05)}
+  .tx:hover{border-radius:0}
+  .iopt:hover,button.card:hover{border-color:rgba(160,140,255,.5)}
+  .lnk:hover{border-color:var(--acc-d)}
+  .btn-sm:hover{filter:brightness(1.2)}
+}

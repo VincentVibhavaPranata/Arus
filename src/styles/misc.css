@@ -1,0 +1,4 @@
+/* ============================ PLACEHOLDER MILESTONE ============================ */
+.soon{border:1px dashed var(--line2);border-radius:var(--r);padding:26px 20px;text-align:center;color:var(--mut2)}
+.soon b{color:var(--mut);display:block;margin-bottom:4px;font-size:14px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}

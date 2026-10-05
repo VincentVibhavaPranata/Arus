@@ -1,0 +1,25 @@
+/* ============================ CARI & FILTER ============================ */
+.searchwrap{position:relative;margin:2px 0 10px}
+.searchwrap>.ic{position:absolute;left:12px;top:50%;margin-top:-9px;color:var(--mut2);
+  pointer-events:none;width:18px;height:18px}
+#tx-q{width:100%;background:var(--card);border:1px solid var(--line);border-radius:var(--r2);
+  padding:11px 40px 11px 40px;font-size:14px;outline:none}
+#tx-q:focus{border-color:var(--acc-d);box-shadow:0 0 0 3px var(--acc-s)}
+#tx-qx{position:absolute;right:7px;top:50%;margin-top:-14px;width:28px;height:28px;
+  border-radius:9px;color:var(--mut2);display:grid;place-items:center}
+#tx-qx .ic{width:14px;height:14px}
+#tx-qx:active{color:var(--txt);background:var(--card2)}
+.fchips{display:flex;gap:7px;overflow-x:auto;margin:0 -16px 12px;padding:0 16px 3px;
+  scrollbar-width:none}
+.fchips::-webkit-scrollbar{display:none}
+.fchip{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:7px 12px 7px 10px;
+  border-radius:99px;border:1px solid var(--line);background:var(--card);
+  color:var(--mut);font-size:12.5px;font-weight:600;white-space:nowrap}
+.fchip .ic{width:15px;height:15px}
+.fchip[aria-pressed="true"]{background:var(--acc-s);border-color:var(--acc-d);color:var(--acc)}
+.resline{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mut2);margin:0 2px 10px}
+.resline .spacer{flex:1}
+.hint{background:var(--card);border:1px dashed var(--line2);border-radius:var(--r2);
+  padding:13px;text-align:center;font-size:12.5px;color:var(--mut);margin-bottom:12px}
+.hint button{display:block;margin:9px auto 0;color:var(--acc);font-weight:700;font-size:12.5px;
+  border:1px solid var(--acc-d);border-radius:9px;padding:7px 13px}

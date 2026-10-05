@@ -1,0 +1,15 @@
+/* ============================ TOAST ============================ */
+#toasts{position:fixed;left:0;right:0;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 6px);
+  z-index:60;max-width:480px;margin:0 auto;padding:0 16px;display:flex;flex-direction:column;
+  gap:8px;pointer-events:none}
+.toast{background:rgba(34,29,74,.78);backdrop-filter:blur(26px) saturate(1.6);-webkit-backdrop-filter:blur(26px) saturate(1.6);
+  border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:13px 14px 13px 16px;
+  display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:600;
+  box-shadow:0 14px 40px rgba(2,0,16,.55),inset 0 1px 0 rgba(255,255,255,.14);
+  pointer-events:auto;animation:toastIn .5s var(--spring) both}
+.toast .msg{flex:1}
+.toast .act{color:#0a0919;background:var(--grad);font-weight:800;font-size:12.5px;padding:7px 13px;
+  border-radius:99px;flex:0 0 auto}
+.toast.out{animation:sink .22s ease-in both}
+@keyframes toastIn{from{opacity:0;transform:translateY(18px) scale(.93)}}
+@keyframes sink{to{opacity:0;transform:translateY(8px) scale(.97)}}
