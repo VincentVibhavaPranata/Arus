@@ -13,3 +13,6 @@
 @import './misc.css';
 @import './refine.css';
 @import './desktop.css';
+
+/* Final visual layer: shared warm-neutral portfolio theme */
+@import './warm-theme.css';
